@@ -30,4 +30,20 @@ public class UserController {
         return "showUser";
     }
 
+    @RequestMapping("/getAllUser1")
+    public String getAllUser1(Model model){
+        List<Euser> eusers = userService.selectAll();
+        model.addAttribute("userList",eusers);
+        model.addAttribute("username","张三");
+        return "showUser1";
+    }
+
+    @RequestMapping("/getAllUser2")
+    public String getAllUser2(Model model){
+        List<Euser> eusers = userService.selectAll();
+        model.addAttribute("userList",eusers);
+        model.addAttribute("username","张三");
+        return "showAllUser2";
+    }
+
 }

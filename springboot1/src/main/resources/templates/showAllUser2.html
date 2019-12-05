@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>springboot-thymeleaf demo</title>
+</head>
+
+<body>
+<p th:text="'hello, ' + ${username} + '!'" />
+<table border="1" id="stuTable">
+    <tr>
+        <td>是否选中</td>
+        <td>编号</td>
+        <td>姓名</td>
+    </tr>
+    <tr th:each="user,userStat:${userList }" >
+        <td><input th:type="checkbox" th:name="id" th:value="${user.id }"></td>
+        <td th:text="${user.id }">编号</td>
+        <td th:text="${user.loginname }">姓名</td>
+    </tr>
+</table>
+</body>
+</html>
